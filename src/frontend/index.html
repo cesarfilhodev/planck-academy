@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planck Academy</title>
+  <meta name="description" content="Planck Academy — tutor interativo de Física Teórica com IA." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- KaTeX 0.16.9 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <button id="menuBtn" class="icon-btn" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <div class="brand">
+      <!-- Atom icon -->
+      <svg class="atom-logo" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+        <circle cx="32" cy="32" r="3" fill="currentColor"/>
+        <ellipse cx="32" cy="32" rx="26" ry="10" fill="none" stroke="currentColor" stroke-width="2"/>
+        <ellipse cx="32" cy="32" rx="26" ry="10" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(60 32 32)"/>
+        <ellipse cx="32" cy="32" rx="26" ry="10" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(-60 32 32)"/>
+      </svg>
+      <h1 class="brand-text">Planck Academy</h1>
+    </div>
+
+    <div class="level-selector" role="tablist" aria-label="Nível do aluno">
+      <button class="level-btn active" data-level="Iniciante">Iniciante</button>
+      <button class="level-btn" data-level="Intermediário">Intermediário</button>
+      <button class="level-btn" data-level="Avançado">Avançado</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <h2 class="sidebar-title">Trilhas</h2>
+      <nav id="moduleNav" class="module-nav"><!-- preenchido via JS --></nav>
+    </aside>
+
+    <main class="chat-area">
+      <div id="messages" class="messages" aria-live="polite"></div>
+
+      <form id="composer" class="composer" autocomplete="off">
+        <button type="button" id="quizBtn" class="btn btn-secondary" title="Gerar quiz sobre o último tópico">Me teste</button>
+        <button type="button" id="clearBtn" class="btn btn-ghost" title="Limpar histórico">Limpar</button>
+        <input id="input" class="input" type="text" placeholder="Pergunte ao Planck... (Enter para enviar)" />
+        <button type="submit" id="sendBtn" class="btn btn-primary">Enviar</button>
+      </form>
+    </main>
+  </div>
+
+  <div id="sidebarBackdrop" class="sidebar-backdrop" hidden></div>
+</body>
+</html>
